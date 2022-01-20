@@ -14,16 +14,16 @@ export const Footer = () => {
           <div className="col-md-4">
             <div className="call-us">
               <div className="call-us__phone mb-2">
-                <i className="fas fa-phone-alt"></i> +8809606667711
+                <i className="fas fa-phone-alt"></i> +8801960086007
               </div>
               <div className="call-us__email">
-                or email <a href="mailto:kk@demogroup.net">kk@demogroup.net</a>
+                or email <a href="mailto:foreignworld2020@gmail.com">foreignworld2020@gmail.com</a>
               </div>
             </div>
 
             <h3>Follow Us on:</h3>
             <div className="social--links">
-              <a href="https://www.facebook.com/khetkhamar.org" target="_blank">
+              <a href="https://www.facebook.com/foreignworldbd" target="_blank">
                 <img src={facebook} alt="face" />
               </a>
               <a href="#" target="_blank">
@@ -69,8 +69,7 @@ export const Footer = () => {
             <div className="contact--address mb-4 text-center text-md-left">
               <address>
                 <p>
-                  Address: House No-10, Road No-10, Sector No: 4, Uttara, Dhaka,
-                  Bangladesh.
+                  Address: BDR Bari, Badda Dhaka  1212, Bangladesh.
                 </p>
               </address>
             </div>
