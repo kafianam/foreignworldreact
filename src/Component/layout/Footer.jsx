@@ -1,10 +1,10 @@
-import React, { useEffect } from "react"
-import facebook from "../../asset/images/fb.png"
-import Youtube from "../../asset/images/Youtube.png"
-import Instagram from "../../asset/images/Instagram.png"
-import twitter from "../../asset/images/twitter.png"
-import google_play_badge from "../../asset/images/app_store_badge.png"
-import app_store_badge from "../../asset/images/app_store_badge.png"
+import React, { useEffect } from "react";
+import facebook from "../../asset/images/fb.png";
+import Youtube from "../../asset/images/Youtube.png";
+import Instagram from "../../asset/images/Instagram.png";
+import twitter from "../../asset/images/twitter.png";
+// import google_play_badge from "../../asset/images/app_store_badge.png";
+// import app_store_badge from "../../asset/images/app_store_badge.png";
 
 export const Footer = () => {
   return (
@@ -17,7 +17,10 @@ export const Footer = () => {
                 <i className="fas fa-phone-alt"></i> +8801960086007
               </div>
               <div className="call-us__email">
-                or email <a href="mailto:foreignworld2020@gmail.com">foreignworld2020@gmail.com</a>
+                or email{" "}
+                <a href="mailto:foreignworld2020@gmail.com">
+                  foreignworld2020@gmail.com
+                </a>
               </div>
             </div>
 
@@ -50,7 +53,7 @@ export const Footer = () => {
               </li>
             </ul>
 
-            <h3>About Khetkhamar</h3>
+            <h3>About Foreignworldbd</h3>
             <ul className="footer-menu">
               <li>
                 <a href="#">About Us</a>
@@ -68,20 +71,18 @@ export const Footer = () => {
             <h3>Contact</h3>
             <div className="contact--address mb-4 text-center text-md-left">
               <address>
-                <p>
-                  Address: BDR Bari, Badda Dhaka  1212, Bangladesh.
-                </p>
+                <p>Address: BDR Bari, Badda Dhaka 1212, Bangladesh.</p>
               </address>
             </div>
-            <h3>Get Our App</h3>
-            <div className="app--link d-flex align-items-center justify-content-center justify-content-md-start">
+            {/* <h3>Get Our App</h3> */}
+            {/* <div className="app--link d-flex align-items-center justify-content-center justify-content-md-start">
               <a href="#" target="_blank">
                 <img src={app_store_badge} alt="/" />
               </a>
               <a href="#" target="_blank">
                 <img src={google_play_badge} alt="" />
               </a>
-            </div>{" "}
+            </div>{" "} */}
             <h3>Pay With</h3>
             <ul className="payMethods d-flex align-items-center">
               <li>
@@ -123,11 +124,11 @@ export const Footer = () => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-12 copyright text-center">
-              <p>&copy; KhetKhamar.org 2021 All Rights Reserved</p>
+              <p>&copy; Foreignworldbd.com 2021 All Rights Reserved</p>
             </div>
           </div>
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};

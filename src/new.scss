@@ -15,13 +15,13 @@ $navbackground: #e9d5d5;
 $banner-background: url("./asset/images/banner1.jpg");
 $font-family-lato: Lato, sans-serif;
 $product-text-color: rgb(13, 17, 54);
-$cart-button-color: #308c3f;
+$cart-button-color: #fe6313;
 $cart-button-hover-color: #ffffff;
 $cart-button-background: #eeeeee;
-$cart-button-hover-background: #308c3f;
+$cart-button-hover-background: #fe6313;
 $category-link-color: #444444;
 $category-link-hover-color: #666666;
-$primary-color: #00a07e;
+$primary-color: #fe6313;
 
 $transition: all 0.3s linear;
 $spacing: 0.1rem;
@@ -722,7 +722,7 @@ button.add-new {
 .placeOrderBtns {
   text-align: right;
   .btn {
-    background-color: #00a07e;
+    background-color: $primary-color;
     border: none;
     -webkit-box-shadow: 0 0 3px #b1aeae;
     box-shadow: 0 0 3px #b1aeae;
@@ -742,7 +742,7 @@ button.add-new {
     width: 100%;
 
     &:hover {
-      background-color: #016a54;
+      background-color: $primary-color;
     }
 
     .placeOrderText {
@@ -755,7 +755,7 @@ button.add-new {
     }
 
     .totalMoneyCount {
-      background-color: #016a54;
+      background-color: $primary-color;
       line-height: 40px;
       -webkit-box-flex: 0;
       -ms-flex: 0 0 40%;
@@ -1923,7 +1923,7 @@ input {
       }
 
       .placeOrderButton {
-        background: $primary-color;
+        background: #fe6313;
         border: none;
         box-shadow: 0 0 3px #b1aeae;
         border-radius: 2px;
@@ -1945,7 +1945,7 @@ input {
         }
 
         .totalMoneyCount {
-          background: #016a54;
+          background: #fe6313;
           line-height: 40px;
           flex: 0 0 30%;
           max-width: 30%;

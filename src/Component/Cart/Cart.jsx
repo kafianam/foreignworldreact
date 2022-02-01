@@ -237,7 +237,7 @@ const CartWrapper = styled.div`
       text-align: center;
 
       .placeOrderButton {
-        background:#00a07e;
+        background:#fe6313;
         border: none;
         box-shadow: 0 0 3px #b1aeae;
         border-radius: 2px;
@@ -258,7 +258,7 @@ const CartWrapper = styled.div`
         }
 
         .totalMoneyCount {
-          background: #016a54;
+          background: #fe6313;
           line-height: 40px;
           flex: 0 0 30%;
           max-width: 30%;
