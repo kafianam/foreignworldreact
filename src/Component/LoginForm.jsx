@@ -4,6 +4,8 @@ import { useHistory } from "react-router-dom";
 import axiosInstance from "../helper/axios";
 import { useForm } from "react-hook-form";
 import { reactLocalStorage } from "reactjs-localstorage";
+import SocialButton from './../Component/SocialLogin/SocialButton.js'
+import 'font-awesome/css/font-awesome.min.css';
 
 export const LoginForm = ({ setLoggedInUser }) => {
   const { isModalOpen, closeModal } = useGlobalContext();
@@ -71,6 +73,41 @@ export const LoginForm = ({ setLoggedInUser }) => {
       })
       .catch((error) => {});
   };
+
+  const handleSocialLogin = (user) => {
+    axiosInstance
+      .post("/auth/social-login", {
+        social_media_login_type: user._provider,
+        social_media_login_id: user._profile.id,
+        social_media_login_data: {
+          name: user._profile.name,
+          email: user._profile.email
+        },
+      })
+      .then(({ data: { data } }) => {
+        console.log(data)
+        reactLocalStorage.setObject("token", {
+          token: data.token,
+          user: data.user,
+        });
+        setViewOtpForm(false);
+        setLoggedInUser(reactLocalStorage.getObject("token"));
+        if (
+          reactLocalStorage.get("cart") &&
+          reactLocalStorage.get("cart").length > 0
+        ) {
+          history.push("/checkoutpage");
+        } else {
+          history.push("/");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+  const handleSocialLoginFailure = (err) => {
+    console.error(err)
+  }  
 
   return (
     <>
@@ -166,6 +203,35 @@ export const LoginForm = ({ setLoggedInUser }) => {
               {/* <FaTimes /> */}
               &times;
             </button>
+          
+          {/* Social Media Login */}
+          <div className="mt-3">
+            <SocialButton
+                style={{backgroundColor: '#fe6313', border: 'none'}}
+                provider="facebook"
+                appId="375840177536393"
+                onLoginSuccess={handleSocialLogin}
+                onLoginFailure={handleSocialLoginFailure}
+              >
+                <button type="button" id="sub" className="btn w-100" style={{fontSize: '16px'}}>
+                  <i className="fa fa-facebook-square mr-2" style={{color: '#3b5998'}}></i>
+                  Login with facebook
+                </button>
+            </SocialButton>
+            <SocialButton
+                style={{backgroundColor: '#fe6313', border: 'none', marginTop: '8px'}}
+                provider="google"
+                appId="449648193182-c53foier6inrvvaqoicitipld4ca2q4p.apps.googleusercontent.com"
+                onLoginSuccess={handleSocialLogin}
+                onLoginFailure={handleSocialLoginFailure}
+              >
+                <button type="button" id="sub" className="btn w-100" style={{fontSize: '16px'}}>
+                  <i className="fa fa-google mr-2" style={{color: '#db4a39'}}></i>
+                  Login with google
+                </button>
+            </SocialButton>
+          </div>
+          
           </div>
         </div>
       </div>
